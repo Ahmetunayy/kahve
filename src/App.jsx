@@ -5,6 +5,7 @@ import Explanation from './components/Explanation';
 import GlassFillSVG from './components/GlassFillSVG';
 import useCoffeeDetails from './hooks/useCoffeeDetails';
 import useReset from './hooks/useReset';
+import Navbar from './components/Navbar';
 
 function App() {
   const [activeCoffee, setActiveCoffee] = useState(null);
@@ -123,46 +124,52 @@ function App() {
 
 
   return (
-    <div className="h-screen overflow-hidden flex flex-col">
-      <div className="flex justify-center items-center">
-        <h1 className="philosopher-bold text-[70px]">Bir Bardak kahve?</h1>
-      </div>
-      <motion.div className="flex flex-grow justify-center items-center w-screen">
-        <motion.div transition={{ duration: 1.5, ease: 'easeInOut' }}>
-          <GlassFillSVG
-            positions={{
-              position1: coffeeDetails.position1,
-              position2: coffeeDetails.position2,
-              position3: coffeeDetails.position3,
-            }}
-            fillHeights={{
-              height1: coffeeDetails.height1,
-              height2: coffeeDetails.height2,
-              height3: coffeeDetails.height3,
-            }}
-            colors={{
-              color1: coffeeDetails.color1,
-              color2: coffeeDetails.color2,
-              color3: coffeeDetails.color3,
-            }}
-            ingredients={{
-              ingredient1: coffeeDetails.ingredient1,
-              ingredient2: coffeeDetails.ingredient2,
-              ingredient3: coffeeDetails.ingredient3,
-            }}
-            textHeights={{
-              textHeight1: coffeeDetails.textHeight1,
-              textHeight2: coffeeDetails.textHeight2,
-              textHeight3: coffeeDetails.textHeight3,
-            }}
-          />
+    <div className=" bg-[#15ae75] flex items-center">
+      <div className='h-screen overflow-hidden w-screen lg:w-screen flex flex-col'>
+
+        <div className="flex justify-center items-center py-6">
+          <h1 className="text-yellow-400 philosopher-bold  leading-none 2xl:text-[130px] xl:text-[120px] lg:text-[100px] ">BİR BARDAK KAHVE?</h1>
+        </div>
+        <div className="flex justify-center items-center leading-none">
+          <h1 className="text-[#865e39] philosopher-bold text-[80.3px]">DOLDUR O ZAMAN</h1>
+        </div>
+        <motion.div className="flex flex-grow justify-center items-center w-screen">
+          <motion.div transition={{ duration: 1.5, ease: 'easeInOut' }}>
+            <GlassFillSVG
+              positions={{
+                position1: coffeeDetails.position1,
+                position2: coffeeDetails.position2,
+                position3: coffeeDetails.position3,
+              }}
+              fillHeights={{
+                height1: coffeeDetails.height1,
+                height2: coffeeDetails.height2,
+                height3: coffeeDetails.height3,
+              }}
+              colors={{
+                color1: coffeeDetails.color1,
+                color2: coffeeDetails.color2,
+                color3: coffeeDetails.color3,
+              }}
+              ingredients={{
+                ingredient1: coffeeDetails.ingredient1,
+                ingredient2: coffeeDetails.ingredient2,
+                ingredient3: coffeeDetails.ingredient3,
+              }}
+              textHeights={{
+                textHeight1: coffeeDetails.textHeight1,
+                textHeight2: coffeeDetails.textHeight2,
+                textHeight3: coffeeDetails.textHeight3,
+              }}
+            />
+          </motion.div>
+
+          <AnimatePresence>{text && <Explanation />}</AnimatePresence>
         </motion.div>
 
-        <AnimatePresence>{text && <Explanation />}</AnimatePresence>
-      </motion.div>
-
-      <div className="border-black flex justify-center py-4">
-        <Button coffeeTypes={coffeeTypes} activeCoffee={activeCoffee} handleClick={handleClick} handleReset={handleReset} />
+        <div className="border-black flex justify-center py-4">
+          <Button coffeeTypes={coffeeTypes} activeCoffee={activeCoffee} handleClick={handleClick} handleReset={handleReset} />
+        </div>
       </div>
     </div>
   );
