@@ -10,8 +10,8 @@ const GlassFillSVG = ({ fillHeights, colors, ingredients, textHeights, positions
 
     return (
         <svg width="600px" height="400px" viewBox="5.5 20 45 40" xmlns="http://www.w3.org/2000/svg">
-            <rect x="0" y="8" width="64" height="64" fill="#15ae75" />
-            <path d="M8 24h40v24a8 8 0 0 1-8 8H16a8 8 0 0 1-8-8V24z" strokeWidth={0.1} fill="#15ae75" stroke="black" />
+            <rect x="0" y="8" width="64" height="64" fill="#ddd7d1" />
+            <path d="M8 24h40v24a8 8 0 0 1-8 8H16a8 8 0 0 1-8-8V24z" strokeWidth={0.1} fill="#ddd7d1" stroke="black" />
 
             <AnimatePresence>
                 {height3 > 0 && (
@@ -216,9 +216,9 @@ const GlassFillSVG = ({ fillHeights, colors, ingredients, textHeights, positions
                 )}
             </AnimatePresence>
 
-            <rect x="0" y="56" width="64" height="20" fill="#15ae75" />
-            <path d="M 7 50 L 7 58 L 15 56 C 11 55 9 53 8 50" fill="#15ae75" />
-            <path d="M 49 50 L 49 57 L 41 56 C 44 55 47 53 48 50" fill="#15ae75" />
+            <rect x="0" y="56" width="64" height="20" fill="#ddd7d1" />
+            <path d="M 7 50 L 7 58 L 15 56 C 11 55 9 53 8 50" fill="#ddd7d1" />
+            <path d="M 49 50 L 49 57 L 41 56 C 44 55 47 53 48 50" fill="#ddd7d1" />
             <path d="M8 24h40v24a8 8 0 0 1-8 8H16a8 8 0 0 1-8-8V24z" strokeWidth={0.5} fill="none" stroke="black" />
 
             <path d="M48 44h5.42A2.59 2.59 0 0 0 56 41.42v-6.84A2.59 2.59 0 0 0 53.42 32H48" fill='none' strokeWidth={0.5} stroke="black" />

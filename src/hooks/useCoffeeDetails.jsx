@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 const useCoffeeDetails = (activeCoffee, coffeeTypes) => {
     const [coffeeDetails, setCoffeeDetails] = useState({
+        title: null,
         ingredient1: null,
         ingredient2: null,
         ingredient3: null,
@@ -29,6 +30,7 @@ const useCoffeeDetails = (activeCoffee, coffeeTypes) => {
         // Only update coffeeDetails if there's a change
         setCoffeeDetails((prevDetails) => {
             if (
+                prevDetails.title === selectedCoffee.title &&
                 prevDetails.ingredient1 === selectedCoffee.ingredient1 &&
                 prevDetails.ingredient2 === selectedCoffee.ingredient2 &&
                 prevDetails.ingredient3 === selectedCoffee.ingredient3 &&
@@ -46,6 +48,7 @@ const useCoffeeDetails = (activeCoffee, coffeeTypes) => {
             }
 
             return {
+                title: selectedCoffee.title || null,
                 ingredient1: selectedCoffee.ingredient1 || null,
                 ingredient2: selectedCoffee.ingredient2 || null,
                 ingredient3: selectedCoffee.ingredient3 || null,

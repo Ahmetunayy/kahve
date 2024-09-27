@@ -18,6 +18,7 @@ const useReset = (setCoffeeDetails, setText, setKahve, setActiveCoffee) => {
         // Clear the text after the heights have been animated
         setTimeout(() => {
             setCoffeeDetails({
+                title: null,
                 ingredient1: null,
                 ingredient2: null,
                 ingredient3: null,
